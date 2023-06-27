@@ -36,7 +36,7 @@ function MainDish({
       >
         {mainDish && (
           <m.img
-            src={`https://www.talebRestaurantApi.onrender.com/assets/menu/${mainDish.cat}/${mainDish?.imageName}`}
+            src={`https://www.taleb_restaurant_api.onrender.com/assets/menu/${mainDish.cat}/${mainDish?.imageName}`}
             style={{
               height: mainDish.cat === "drinks" ? "400px" : "",
             }}

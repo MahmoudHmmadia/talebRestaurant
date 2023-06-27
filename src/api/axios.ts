@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL = "https://www.talebRestaurantApi.onrender.com/";
+const URL = "https://www.taleb_restaurant_api.onrender.com/";
 const myAxios = axios.create({
   baseURL: URL,
   headers: {
