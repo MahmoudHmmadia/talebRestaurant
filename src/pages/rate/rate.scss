@@ -1,0 +1,11 @@
+.rate {
+  background-image: url("../../assets/rate1.svg");
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  @media (max-width: 767px) {
+    .image {
+      display: none;
+    }
+  }
+}

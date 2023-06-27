@@ -1,0 +1,10 @@
+.reservation {
+  @media (max-width: 991px) {
+    width: 70%;
+  }
+  @media (max-width: 767px) {
+    width: 90%;
+  }
+  transform: translateX(-50%);
+  top: 10%;
+}

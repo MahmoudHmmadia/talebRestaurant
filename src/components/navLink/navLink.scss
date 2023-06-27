@@ -1,0 +1,24 @@
+@use "../../sass/colors/colors" as *;
+.nav_link {
+  .chape_line {
+    transition: 0.4s all ease-in-out;
+  }
+  &.active {
+    a {
+      color: $khaled-main !important;
+    }
+    .chape {
+      .chape_line {
+        opacity: 1;
+        transform: scaleX(1) !important;
+        width: 100%;
+      }
+    }
+  }
+  &:hover {
+    .chape_line {
+      opacity: 1 !important;
+      transform: scaleX(1) !important;
+    }
+  }
+}

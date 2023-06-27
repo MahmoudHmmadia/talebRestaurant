@@ -1,0 +1,20 @@
+.home {
+  padding-bottom: 150px;
+  .content {
+    @media (max-width: 767px) {
+      .cool_title {
+        font-size: 4rem !important;
+      }
+      .controller_r {
+        right: 10px;
+        width: 20px !important;
+        height: 20px !important;
+      }
+      .controller_l {
+        left: 10px;
+        width: 20px !important;
+        height: 20px !important;
+      }
+    }
+  }
+}

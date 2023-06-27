@@ -1,0 +1,70 @@
+@use "../../sass/mixins/grid" as *;
+.popular {
+  .swiper {
+    width: fit-content !important;
+  }
+  min-height: 110vh;
+  background-image: url("../../assets/makeYourFood.jpg");
+  background-size: cover;
+  @media (max-width: 991px) {
+    .popular_shape {
+      opacity: 0.5;
+      top: -100% !important;
+    }
+    .popular_main_dish_container {
+      display: flex !important;
+      justify-content: center;
+      gap: 0 !important;
+      .main_dish {
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -87%);
+        width: 100%;
+      }
+
+      .button_container {
+        justify-content: center;
+      }
+      .design_helper {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .alt-nav {
+      .container {
+        justify-content: center !important;
+        gap: 3rem;
+      }
+      .popular-icon {
+        display: none;
+      }
+    }
+    .popular_shape {
+      left: -50% !important;
+    }
+  }
+  @media (max-width: 500px) {
+    .popular_shape {
+      left: -80% !important;
+      top: -90% !important;
+    }
+    .alt-nav {
+      .container {
+        justify-content: start !important;
+        gap: 3rem;
+      }
+      .popular-icon {
+        display: none;
+      }
+    }
+    .main_dish {
+      .main-title {
+        font-size: 3rem;
+      }
+    }
+  }
+}

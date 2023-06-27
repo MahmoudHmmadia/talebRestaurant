@@ -1,0 +1,88 @@
+@use "../../sass/colors/colors" as *;
+#imageI {
+  --i: 0;
+}
+#imageII {
+  --i: 1;
+}
+#imageIII {
+  --i: 2;
+}
+#imageVI {
+  --i: 3;
+}
+#imageV {
+  --i: 4;
+}
+#imageIV {
+  --i: 5;
+}
+.team {
+  background-image: url("../../assets/back2.jpg");
+  background-size: cover;
+  .container {
+    .team_content {
+      @media (max-width: 1190px) {
+        width: 100%;
+      }
+    }
+    .team_leaders {
+      width: 600px;
+      height: 600px;
+      @media (max-width: 767px) {
+        width: 300px;
+        height: 300px;
+      }
+      border: 1px solid #fff;
+      .animate_pattern_i {
+        border: 5px solid;
+        border-color: $khaled-main transparent $khaled-main transparent;
+      }
+
+      .icons {
+        left: -50%;
+        .image {
+          width: 80px;
+          height: 80px;
+          transform: rotate(calc(360deg / 6 * var(--i)));
+          transform-origin: 340px;
+          @media (max-width: 767px) {
+            width: 40px;
+            height: 40px;
+            transform-origin: 170px;
+          }
+
+          img {
+            transform: rotate(calc(-360deg / 6 * var(--i)));
+            filter: grayscale(100%);
+          }
+          &.active {
+            box-shadow: 0 0 0 6px #161718, 0 0 0 12px $khaled-main;
+            img {
+              filter: grayscale(0);
+            }
+          }
+        }
+      }
+      .person_details {
+        @media (max-width: 767px) {
+          .image {
+            img {
+              width: 50px;
+              height: 50px;
+            }
+          }
+          .details {
+            font-size: 0.6rem;
+          }
+          .name {
+            font-size: 0.7rem;
+          }
+          .social {
+            font-size: 0.6rem;
+          }
+        }
+      }
+    }
+  }
+}

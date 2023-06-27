@@ -1,0 +1,88 @@
+@use "../../sass/mixins/grid" as *;
+.menu {
+  background-image: url("../../assets/menu2.jpg");
+  background-size: cover;
+  .menu_dishes {
+    @include grid(150px);
+    gap: 3rem;
+  }
+  @media (min-width: 767px) {
+    .logo {
+      padding-left: 170px;
+    }
+  }
+  @media (max-width: 767px) {
+    .order,
+    .rate,
+    .server-error,
+    .comments {
+      width: 90%;
+      z-index: 1000001 !important;
+    }
+    .main_dish {
+      flex-direction: column;
+      align-items: center;
+      .main_dish_content {
+        align-items: center;
+        gap: 1.5rem !important;
+        .name {
+          .separator {
+            width: 100px !important;
+            bottom: -50% !important;
+            left: 27% !important;
+          }
+        }
+        .details {
+          font-size: 0.8rem;
+          text-align: center !important;
+        }
+      }
+      .price {
+        justify-content: center;
+      }
+    }
+    .large_med_screen {
+      display: none;
+    }
+    .mobile_shape {
+      display: block !important;
+      top: 30%;
+      left: 50%;
+      width: 450px;
+      height: 450px;
+      z-index: 1;
+      opacity: 0.85;
+      transform: rotate(45deg);
+      border-radius: 19%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .menu_dishes {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      gap: 1rem;
+      .dish {
+        gap: 0.5rem;
+        background: transparent;
+        align-items: center;
+        min-width: 300px;
+        .price {
+          justify-content: center;
+        }
+        .image {
+          position: relative;
+          margin: 0;
+          left: 0 !important;
+          top: 0 !important;
+          img {
+            width: 200px;
+          }
+        }
+        .dish_info {
+          align-items: center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.services {
+  .service_box {
+    .pattern {
+      transform: translate(-50%);
+      top: -4%;
+      img {
+        height: 100%;
+      }
+    }
+    .shine::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background-image: linear-gradient(to right, transparent 0%, #fff6 100%);
+      transform: skewX(-0.08turn) translateX(-180%);
+      z-index: 1;
+    }
+    &:hover {
+      .pattern {
+        transform: translateX(-50%) rotateY(0.5turn);
+        transition-delay: 500ms;
+      }
+
+      & .shine::before {
+        transform: skewX(-0.08turn) translateX(275%);
+        transition: 1000ms ease-in-out;
+      }
+      & .image {
+        .service_image {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  @media (max-width: 992px) {
+    .services_info {
+      width: 100%;
+    }
+    .services_boxes {
+      justify-content: center;
+      .service_box {
+        transform: translateY(0) !important;
+      }
+    }
+  }
+}

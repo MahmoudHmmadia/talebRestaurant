@@ -1,0 +1,77 @@
+@use "../../sass/mixins/grid" as *;
+@use "../../sass/colors/colors" as *;
+.makeYourFood {
+  background-image: url("../../assets/makeYourFood3.jpg");
+  background-size: cover;
+  .pizza,
+  .burger {
+    width: 45%;
+    &:hover {
+      border-radius: 0.5rem;
+      position: relative;
+      width: 46%;
+      cursor: default;
+      .pizza_logo,
+      .burger_logo {
+        transform: scale(0);
+      }
+      .make_pizza,
+      .make_burger {
+        display: flex;
+        transform: scale(1) translate(-50%, -50%);
+        animation: show 1s ease-in;
+        opacity: 1;
+        .image {
+          animation: fade 0.8s ease-in;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+  .makeYourFood_boxes {
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      .pizza,
+      .burger {
+        width: 80%;
+      }
+      .pizza {
+        display: flex;
+        justify-content: end;
+      }
+    }
+    @media (max-width: 500px) {
+      .pizza,
+      .burger {
+        width: 100%;
+      }
+    }
+  }
+  .food-cards {
+    @include grid(400px);
+    .option:hover {
+      background-color: $khaled-main;
+      color: #000 !important;
+    }
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

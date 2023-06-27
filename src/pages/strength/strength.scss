@@ -1,0 +1,15 @@
+@use "../../sass/mixins/grid" as *;
+.strength {
+  .strength_boxes {
+    @include grid(250px);
+    gap: 3rem !important;
+  }
+  .icon {
+    transform: scale(1) rotate(0);
+  }
+  & .strength_box:hover {
+    .icon {
+      transform: scale(-1) rotate(180deg);
+    }
+  }
+}
