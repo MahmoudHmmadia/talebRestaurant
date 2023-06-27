@@ -207,7 +207,7 @@ function Popular() {
                       key={index}
                     >
                       <m.img
-                        src={`http://localhost:3500/assets/menu/${
+                        src={`https://www.talebRestaurantApi.onrender.com/assets/menu/${
                           dish.cat && dish.cat
                         }/${dish?.imageName.trim()}`}
                         alt="MAIN_DISH"
@@ -297,7 +297,7 @@ function Popular() {
                   >
                     <div className="image">
                       <img
-                        src={`http://localhost:3500/assets/menu/${
+                        src={`https://www.talebRestaurantApi.onrender.com/assets/menu/${
                           dish.cat && dish.cat
                         }/${dish?.imageName.trim()}`}
                         alt="DISH"

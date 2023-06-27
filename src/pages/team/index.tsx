@@ -149,7 +149,7 @@ function Team() {
                     }}
                   >
                     <img
-                      src={`http://localhost:3500/assets/team/${person?.image}`}
+                      src={`https://www.talebRestaurantApi.onrender.com/assets/${person?.image}`}
                       alt="TEAM"
                       className="absolute fit-cover l-0 t-0 w-100 h-100 circle"
                     />
@@ -175,7 +175,7 @@ function Team() {
               >
                 <div className="image overflow-hidden radius-m">
                   <img
-                    src={`http://localhost:3500/assets/team/${personDetails?.image}`}
+                    src={`https://www.talebRestaurantApi.onrender.com/assets/${personDetails?.image}`}
                     alt="LEADER"
                     width={120}
                     height={120}
