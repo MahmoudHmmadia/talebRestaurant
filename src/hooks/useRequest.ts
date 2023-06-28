@@ -1,4 +1,4 @@
-import { AxiosError } from "axios";
+import { AxiosError, AxiosResponse } from "axios";
 import myAxios from "../api/axios";
 import { UseContext } from "../context/UseContext";
 function useRequest() {
@@ -14,7 +14,7 @@ function useRequest() {
     setLoader(true);
     myAxios
       .post(path, getPayload())
-      .then((res) => {
+      .then((res: AxiosResponse) => {
         setLoader(false);
         if (res.status === 204) {
           reset();

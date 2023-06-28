@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { person } from "../constants/data";
 import myAxios from "../api/axios";
 import { UseContext } from "../context/UseContext";
+import { AxiosResponse } from "axios";
 
 function useTeam() {
   const { setServerResponse, setLoader } = UseContext();
@@ -13,7 +14,7 @@ function useTeam() {
     setLoader(true);
     myAxios
       .get("employees")
-      .then((res) => {
+      .then((res: AxiosResponse) => {
         setLoader(false);
         setTeam(res.data);
         setPersonDetails(res.data[0]);

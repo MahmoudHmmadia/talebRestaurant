@@ -5,9 +5,8 @@ import { RiPhoneFill, RiUserFill } from "react-icons/ri";
 import AltButton from "../../../components/altButton";
 import { BsSendCheckFill } from "react-icons/bs";
 import { IoCloseCircle, IoLocationSharp } from "react-icons/io5";
-import { useEffect, useRef, useState } from "react";
-import myAxios from "../../../api/axios";
-import { UseContext } from "../../../context/UseContext";
+import { useRef, useState } from "react";
+
 import useRequest from "../../../hooks/useRequest";
 type props = {
   setIsSubscribe: React.Dispatch<React.SetStateAction<boolean>>;

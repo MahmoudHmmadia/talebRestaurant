@@ -1,15 +1,14 @@
 import { motion as m } from "framer-motion";
 import {
-  BiUser,
   BsEmojiAngryFill,
   BsEmojiHeartEyesFill,
   BsEmojiNeutralFill,
   BsEmojiSmileFill,
-  CgComment,
-  IoCloseCircle,
-  MdOutlineStarRate,
-  MdStarRate,
-} from "react-icons/all";
+} from "react-icons/bs";
+import { MdOutlineStarRate, MdStarRate } from "react-icons/md";
+import { BiUser } from "react-icons/bi";
+import { CgComment } from "react-icons/cg";
+import { IoCloseCircle } from "react-icons/io5";
 import RateBox from "./RateBox";
 import AltButton from "../../../components/altButton";
 import { useRef, useState } from "react";

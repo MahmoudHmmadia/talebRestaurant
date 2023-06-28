@@ -1,14 +1,9 @@
-import {
-  IoReturnDownBackOutline,
-  BiCart,
-  BiMenu,
-  CgClose,
-  FaComments,
-  IoCloseCircle,
-} from "react-icons/all";
+import { BiCart, BiMenu } from "react-icons/bi";
+import { IoCloseCircle } from "react-icons/io5";
+import { FaComments } from "react-icons/fa";
+import { CgClose } from "react-icons/cg";
 import logo from "../../assets/logo.png";
 import { motion as m } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 import "./menu.scss";
 import useMenu, { menuCategories } from "../../hooks/useMenu";
 import SwiperCore, { Pagination } from "swiper";
@@ -16,7 +11,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import MenuNav from "./components/MenuNav";
-import { useEffect, useState } from "react";
 import Rate from "./components/Rate";
 import Cart from "./components/Cart";
 import MainDish from "./components/MainDish";

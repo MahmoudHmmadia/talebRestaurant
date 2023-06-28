@@ -1,7 +1,8 @@
+import { AiFillInstagram } from "react-icons/ai";
+import { SiGmail } from "react-icons/si";
+import { MdSoupKitchen } from "react-icons/md";
+import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import {
-  AiFillInstagram,
-  BsFacebook,
-  BsLinkedin,
   GiBread,
   GiCheeseWedge,
   GiDoughRoller,
@@ -10,9 +11,7 @@ import {
   GiPickle,
   GiSaucepan,
   GiTomato,
-  MdSoupKitchen,
-  SiGmail,
-} from "react-icons/all";
+} from "react-icons/gi";
 type social = {
   address: string;
   name: string;

@@ -1,28 +1,23 @@
 import { useState } from "react";
 import { IconType } from "react-icons";
 import AltButton from "../../../components/altButton";
-import {
-  BsFillCheckCircleFill,
-  MdNextPlan,
-  ImSpoonKnife,
-  GiCook,
-  GiKitchenKnives,
-  GiReturnArrow,
-  IoCloseCircle,
-  RiCloseCircleFill,
-} from "react-icons/all";
+import { GiCook, GiKitchenKnives, GiReturnArrow } from "react-icons/gi";
+import { BsFillCheckCircleFill } from "react-icons/bs";
+import { MdNextPlan } from "react-icons/md";
+import { ImSpoonKnife } from "react-icons/im";
+import { RiCloseCircleFill } from "react-icons/ri";
 import { addedTypes, chosenTypes } from "../../../hooks/useMakeFood";
 import { UseContext } from "../../../context/UseContext";
 import Order from "../../../components/order";
 type props = {
   typeToChose: {
     title: string;
-    icon: IconType;
+    icon: any;
     options: string[];
   }[];
   typeToAdd: {
     title: string;
-    icon: IconType;
+    icon: any;
     options: string[];
   }[];
   main: "pizza" | "burger" | string;

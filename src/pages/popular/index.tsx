@@ -18,6 +18,7 @@ import ServerResponse from "../../components/serverResponse";
 import AltButton from "../../components/altButton";
 import { BiHome } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { AxiosResponse } from "axios";
 SwiperCore.use([Pagination]);
 function Popular() {
   const {
@@ -79,7 +80,7 @@ function Popular() {
     setLoader(true);
     myAxios
       .get("/menu/popular")
-      .then((res) => {
+      .then((res: AxiosResponse) => {
         setLoader(false);
         setPopular(addToRes(res.data));
         setMainDish(addToRes(res.data)![0]);

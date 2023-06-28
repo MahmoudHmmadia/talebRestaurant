@@ -1,10 +1,10 @@
 import logo from "../../assets/logo.png";
 import Button from "../button";
 import Link from "../navLink";
-import { CiBurger, CiMenuBurger, SlCalender } from "react-icons/all";
+import { SlCalender } from "react-icons/sl";
+import { CiBurger } from "react-icons/ci";
 import "./navbar.scss";
 import { UseContext } from "../../context/UseContext";
-import AltButton from "../altButton";
 function Navbar() {
   const { setReservation, setToggle } = UseContext();
   return (

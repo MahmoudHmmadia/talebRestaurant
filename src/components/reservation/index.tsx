@@ -1,13 +1,9 @@
 import CustomSelect from "../customSelect";
 import Calendar from "react-calendar";
-import {
-  BiCalendar,
-  IoIosPeople,
-  IoCloseCircle,
-  BsFillPeopleFill,
-  BsFillPersonFill,
-  BiCalendarCheck,
-} from "react-icons/all";
+import { IoIosPeople } from "react-icons/io";
+import { IoCloseCircle } from "react-icons/io5";
+import { BsFillPeopleFill, BsFillPersonFill } from "react-icons/bs";
+import { BiCalendarCheck, BiCalendar } from "react-icons/bi";
 import { motion as m } from "framer-motion";
 import { UseContext } from "../../context/UseContext";
 import "./reservation.scss";

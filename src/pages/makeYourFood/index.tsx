@@ -1,4 +1,6 @@
-import { FaPizzaSlice, CiBurger, TbChefHat } from "react-icons/all";
+import { TbChefHat } from "react-icons/tb";
+import { CiBurger } from "react-icons/ci";
+import { FaPizzaSlice } from "react-icons/fa";
 import pizza from "../../assets/pizza.png";
 import pizzaLogo from "../../assets/pizzaLogo.png";
 import burgerLogo from "../../assets/burgerLogo.png";

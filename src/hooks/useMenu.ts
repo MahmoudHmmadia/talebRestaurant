@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import myAxios from "../api/axios";
 import { UseContext } from "../context/UseContext";
+import { AxiosResponse } from "axios";
 export type menuCategories =
   | "pizza"
   | "meal"
@@ -48,7 +49,7 @@ function useMenu() {
     setMenu(undefined);
     myAxios
       .get("menu")
-      .then((res) => {
+      .then((res: AxiosResponse) => {
         setLoader(false);
         if (res.status === 200) {
           setMenu(res.data);

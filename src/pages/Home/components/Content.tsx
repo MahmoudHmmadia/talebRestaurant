@@ -1,8 +1,5 @@
-import {
-  AiOutlineArrowLeft,
-  AiOutlineArrowRight,
-  GiFoodTruck,
-} from "react-icons/all";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { GiFoodTruck } from "react-icons/gi";
 import SectionTitle from "../../../components/sectionTitle";
 import Button from "../../../components/button";
 import { motion as m } from "framer-motion";

@@ -1,15 +1,9 @@
 import { dish } from "../../../hooks/useMenu";
 import { motion as m } from "framer-motion";
-import logo from "../../../assets/logo.png";
-import {
-  BiCartAdd,
-  BsArrowRight,
-  BsStars,
-  CgRemove,
-  FaComments,
-  MdOutlineAddShoppingCart,
-  MdStarRate,
-} from "react-icons/all";
+import { BsArrowRight, BsStars } from "react-icons/bs";
+import { MdOutlineAddShoppingCart, MdStarRate } from "react-icons/md";
+import { CgRemove } from "react-icons/cg";
+import { BiCartAdd } from "react-icons/bi";
 import AltButton from "../../../components/altButton";
 type props = {
   mainDish: dish | undefined;
