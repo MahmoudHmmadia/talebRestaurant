@@ -14,6 +14,7 @@ import ServerResponse from "../../components/serverResponse";
 import { useEffect, useState } from "react";
 import Loading from "../loading";
 import image from "../../assets/rate.svg";
+import { Helmet } from "react-helmet";
 function Welcome() {
   const { toggle, setToggle, serverResponse } = UseContext();
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +25,10 @@ function Welcome() {
   }, []);
   return (
     <>
+      <Helmet>
+        <link rel="icon" href={logo} />
+        <title>Taleb Restaurant | Home</title>
+      </Helmet>
       {isLoading && <Loading />}
       {toggle && (
         <>

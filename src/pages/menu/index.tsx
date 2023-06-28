@@ -333,7 +333,7 @@ function Menu() {
                               }}
                             >
                               <img
-                                src={`https://www.taleb_restaurant_api.onrender.com/assets/menu/${
+                                src={`https://www.taleb-restaurant-api.onrender.com/assets/menu/${
                                   dish.cat && dish.cat
                                 }/${dish?.imageName.trim()}`}
                                 alt="DISH"
