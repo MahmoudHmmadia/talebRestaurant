@@ -56,7 +56,7 @@ function useMenu() {
           menuState && setMainDish(menuState[0]);
         } else if (res.status === 204) console.log(res.data.message);
       })
-      .catch((_err) => {
+      .catch(() => {
         setLoader(false);
         setServerResponse({
           content: "The Server Is Not Working Write Now , Try Again Letter",

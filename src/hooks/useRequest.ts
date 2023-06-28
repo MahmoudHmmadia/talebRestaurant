@@ -1,3 +1,4 @@
+import { AxiosError } from "axios";
 import myAxios from "../api/axios";
 import { UseContext } from "../context/UseContext";
 function useRequest() {
@@ -30,7 +31,7 @@ function useRequest() {
         }
         refresh && refresh();
       })
-      .catch((err) => {
+      .catch((err: AxiosError) => {
         setLoader(false);
         if (err.response?.status === 400) {
           reset();
@@ -39,9 +40,12 @@ function useRequest() {
             type: "error",
           });
         } else if (err.response?.status === 409) {
+          const message = {
+            message: "",
+          };
           reset();
           setServerResponse({
-            content: err.response.data.message,
+            content: (err.response.data as typeof message).message,
             type: "error",
           });
         } else {

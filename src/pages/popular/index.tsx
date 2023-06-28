@@ -84,7 +84,7 @@ function Popular() {
         setPopular(addToRes(res.data));
         setMainDish(addToRes(res.data)![0]);
       })
-      .catch((_err) => {
+      .catch(() => {
         setLoader(false);
         setServerResponse({
           type: "error",

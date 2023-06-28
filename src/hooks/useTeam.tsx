@@ -19,7 +19,7 @@ function useTeam() {
         setPersonDetails(res.data[0]);
         setActive(res.data[0]._id);
       })
-      .catch((_err) => {
+      .catch(() => {
         setLoader(false);
         setServerResponse({
           type: "error",
