@@ -14,6 +14,7 @@ import { UseContext } from "../../context/UseContext";
 import ServerResponse from "../../components/serverResponse";
 import AltNav from "../../components/AltNav";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 function MakeYourFood() {
   const { isBurger, isPizza, setIsBurger, setIsPizza } = useMakeFood();
@@ -31,6 +32,9 @@ function MakeYourFood() {
         minHeight: "100vh",
       }}
     >
+      <Helmet>
+        <title>Taleb Restaurant | Make Your Food</title>
+      </Helmet>
       {loader && (
         <>
           <div

@@ -19,6 +19,7 @@ import AltButton from "../../components/altButton";
 import { BiHome } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { AxiosResponse } from "axios";
+import { Helmet } from "react-helmet";
 SwiperCore.use([Pagination]);
 function Popular() {
   const {
@@ -98,6 +99,9 @@ function Popular() {
   }, []);
   return (
     <div className="popular alt-bg relative overflow-hidden pb-3" id="popular">
+      <Helmet>
+        <title>Taleb Restaurant | Popular</title>
+      </Helmet>
       {loader && (
         <>
           <div

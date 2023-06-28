@@ -10,6 +10,7 @@ import { UseContext } from "../../context/UseContext";
 import AltButton from "../../components/altButton";
 import { BiHome } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 function Team() {
   const { loader } = UseContext();
   let count = 0;
@@ -30,6 +31,9 @@ function Team() {
         minHeight: "100vh",
       }}
     >
+      <Helmet>
+        <title>Taleb Restaurant | Team</title>
+      </Helmet>
       <div className="absolute l-0 t-0 w-100 h-100 black-bg opacity-90"></div>
       {team.length == 0 && !loader ? (
         <div className="flex flex-column align-center g-3 absolute l-50 t-50 translate-50 container">

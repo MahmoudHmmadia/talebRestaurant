@@ -18,6 +18,7 @@ import Order from "../../components/order";
 import ServerResponse from "../../components/serverResponse";
 import { UseContext } from "../../context/UseContext";
 import AltNav from "../../components/AltNav";
+import { Helmet } from "react-helmet";
 SwiperCore.use([Pagination]);
 function Menu() {
   const MENU_CATEGORIES: menuCategories[] = [
@@ -62,6 +63,10 @@ function Menu() {
         minHeight: "100vh",
       }}
     >
+      <Helmet>
+        <link rel="icon" href={logo} />
+        <title>Taleb Restaurant | Menu</title>
+      </Helmet>
       {loader ? (
         <>
           <div
