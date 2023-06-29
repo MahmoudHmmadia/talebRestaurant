@@ -212,7 +212,7 @@ function Popular() {
                       key={index}
                     >
                       <m.img
-                        src={`https://www.taleb-restaurant-api.onrender.com/assets/${dish?.imageName}`}
+                        src={`https://taleb-restaurant-api.onrender.com/assets/${dish?.imageName}`}
                         alt="MAIN_DISH"
                         width={400}
                         initial={{
@@ -300,7 +300,7 @@ function Popular() {
                   >
                     <div className="image">
                       <img
-                        src={`https://www.taleb-restaurant-api.onrender.com/assets/${dish?.imageName}`}
+                        src={`https://taleb-restaurant-api.onrender.com/assets/${dish?.imageName}`}
                         alt="DISH"
                         width={150}
                       />

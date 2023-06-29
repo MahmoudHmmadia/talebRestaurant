@@ -338,7 +338,7 @@ function Menu() {
                               }}
                             >
                               <img
-                                src={`https://www.taleb-restaurant-api.onrender.com/assets/${dish?.imageName}`}
+                                src={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName}`}
                                 alt="DISH"
                                 className="fit-contain"
                                 style={{
