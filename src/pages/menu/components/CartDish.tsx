@@ -67,11 +67,23 @@ function CartDish({ dish, cart, setCart, setTotal, total }: props) {
       </div>
       <div className="details flex flex-column g-1 align-center">
         <div className="image">
-          <img
-            src={`http://localhost:3500/assets/menu/${dish.cat}/${dish.imageName}`}
-            alt="IMAGE"
-            width={100}
-          />
+          <div
+            className="blur-load"
+            style={{
+              backgroundImage: `url(https://taleb-restaurant-api.onrender.com/assets/${
+                dish.imageName.split(".")[0] +
+                "-small" +
+                "." +
+                dish.imageName.split(".")[1]
+              })`,
+            }}
+          >
+            <img
+              src={`https://taleb-restaurant-api/${dish.imageName}`}
+              alt="IMAGE"
+              width={100}
+            />
+          </div>
         </div>
         <span
           className="cl-b khaled-bg bold centering-content"

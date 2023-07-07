@@ -4,13 +4,14 @@ import useTeam from "../../hooks/useTeam";
 import { motion as m } from "framer-motion";
 import "./team.scss";
 import { CiWarning } from "react-icons/ci";
-import AltNav from "../../components/AltNav";
+import AltNav from "../../components/altnav/AltNav";
 import { RiTeamFill } from "react-icons/ri";
 import { UseContext } from "../../context/UseContext";
 import AltButton from "../../components/altButton";
 import { BiHome } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import CoolImage from "../../components/coolImage/CoolImage";
 function Team() {
   const { loader } = UseContext();
   let count = 0;
@@ -25,7 +26,7 @@ function Team() {
   const navigate = useNavigate();
   return (
     <div
-      className="team alt-bg relative"
+      className="team alt-bg relative pb-3"
       id="team"
       style={{
         minHeight: "100vh",
@@ -152,11 +153,18 @@ function Team() {
                       }, 300);
                     }}
                   >
-                    <img
-                      src={`https://taleb-restaurant-api.onrender.com/assets/${person.image}`}
-                      alt="TEAM"
-                      className="absolute fit-cover l-0 t-0 w-100 h-100 circle"
-                    />
+                    {person.image && (
+                      <CoolImage
+                        thumb={`https://taleb-restaurant-api.onrender.com/assets/${
+                          person?.image.trim().split(".")[0] +
+                          "-small." +
+                          person?.image.trim().split(".")[1]
+                        }`}
+                        height={""}
+                        width={150}
+                        url={`https://taleb-restaurant-api.onrender.com/assets/${person?.image.trim()}`}
+                      />
+                    )}
                   </div>
                 ))}
             </div>
@@ -174,16 +182,24 @@ function Team() {
                   x: "-50%",
                 }}
                 transition={{
-                  duration: 0.5,
+                  duration: 0.05,
+                  type: "spring",
+                  stiffness: 300,
                 }}
               >
                 <div className="image overflow-hidden radius-m">
-                  <img
-                    src={`https://taleb-restaurant-api.onrender.com/assets/${personDetails?.image}`}
-                    alt="LEADER"
-                    width={120}
-                    height={120}
-                  />
+                  {personDetails.image && (
+                    <CoolImage
+                      thumb={`https://taleb-restaurant-api.onrender.com/assets/${
+                        personDetails?.image.trim().split(".")[0] +
+                        "-small." +
+                        personDetails?.image.trim().split(".")[1]
+                      }`}
+                      height={120}
+                      width={120}
+                      url={`https://taleb-restaurant-api.onrender.com/assets/${personDetails?.image.trim()}`}
+                    />
+                  )}
                 </div>
                 <h4 className="name cl-khaled capitalize">
                   {personDetails?.name}

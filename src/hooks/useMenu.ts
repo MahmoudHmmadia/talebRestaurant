@@ -28,6 +28,7 @@ export type dish = {
   right?: string;
   transform?: string;
   dishNumber?: number;
+  blurHash: string;
 };
 function useMenu() {
   const { cat, setServerResponse, setLoader } = UseContext();
@@ -97,7 +98,11 @@ function useMenu() {
     } else {
       setMenuState(menu?.filter((d) => d.cat === cat));
     }
-  }, [cat, detail]);
+  }, [detail]);
+  useEffect(() => {
+    setDetail("all");
+    setMenuState(menu?.filter((d) => d.cat === cat));
+  }, [cat]);
   useEffect(() => {
     setMainDish(undefined);
     setTimeout(() => {
@@ -108,13 +113,11 @@ function useMenu() {
           else setIsInCart(false);
       }
     }, 1);
-  }, [menuState, cat]);
+  }, [menuState]);
   useEffect(() => {
     handleIsInCart();
   }, [cart, mainDish]);
-  useEffect(() => {
-    setDetail("all");
-  }, [cat]);
+
   return {
     mainDish,
     isToggle,

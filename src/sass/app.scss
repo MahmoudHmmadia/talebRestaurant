@@ -182,7 +182,28 @@ body {
   box-shadow: 0 5px 0 #fff, -35px 50px 0 #fff, -70px 95px 0 #fff;
   animation: loading-step 1s ease-in-out infinite;
 }
-
+.coolImage {
+  div {
+    position: absolute !important;
+  }
+  canvas {
+    border-radius: 50%;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    position: absolute;
+  }
+}
+@keyframes pulse {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
 @keyframes loading-bounce {
   0% {
     transform: scale(1, 0.7);

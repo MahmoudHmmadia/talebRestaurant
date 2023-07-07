@@ -5,6 +5,8 @@ import { MdOutlineAddShoppingCart, MdStarRate } from "react-icons/md";
 import { CgRemove } from "react-icons/cg";
 import { BiCartAdd } from "react-icons/bi";
 import AltButton from "../../../components/altButton";
+import CoolImage from "../../../components/coolImage/CoolImage";
+import logo from "../../../assets/logo.png";
 type props = {
   mainDish: dish | undefined;
   setIsRate: React.Dispatch<React.SetStateAction<boolean>>;
@@ -29,22 +31,15 @@ function MainDish({
         }}
       >
         {mainDish && (
-          <m.img
-            src={`https://taleb-restaurant-api.onrender.com/assets/${mainDish.imageName}`}
-            style={{
-              height: mainDish.cat === "drinks" ? "400px" : "",
-            }}
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-              transition: {
-                duration: 0.1,
-                type: "spring",
-                stiffness: 60,
-              },
-            }}
+          <CoolImage
+            thumb={`https://taleb-restaurant-api.onrender.com/assets/${
+              mainDish.imageName.trim().split(".")[0] +
+              "-small." +
+              mainDish.imageName.trim().split(".")[1]
+            }`}
+            height={mainDish.cat === "drinks" ? 400 : "auto"}
+            width={"100%"}
+            url={`https://taleb-restaurant-api.onrender.com/assets/${mainDish.imageName.trim()}`}
           />
         )}
         <div

@@ -1,5 +1,5 @@
 import Link from "../../components/navLink";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 import pattern from "../../assets/footer-form-pattern.svg";
 import "./footer.scss";
 import { motion as m } from "framer-motion";
@@ -22,6 +22,12 @@ function Footer() {
             href="services"
             color="cl-t2"
           />
+          <Link
+            content="popular"
+            hoverColor="#e4c590"
+            href="popular"
+            color="cl-t2"
+          />
         </ul>
         <div className="flex align-center flex-column g-3 p-3 relative overflow-hidden brand">
           <div className="pattern absolute l-0 t-0 h-100">
@@ -31,7 +37,7 @@ function Footer() {
             <img src={pattern} alt="PATTERN" width={15} />
           </div>
           <div className="logo">
-            <img src={logo} alt="LOGO" />
+            <img src={logo} alt="LOGO" width={100} />
           </div>
           <p className="cl-t2">Khaled Restaurant , Damascus City, Hamk</p>
           <m.a
@@ -83,6 +89,12 @@ function Footer() {
             content="make your food"
             hoverColor="#e4c590"
             href="make-your-food"
+            color="cl-t2"
+          />
+          <Link
+            content="our team"
+            hoverColor="#e4c590"
+            href="team"
             color="cl-t2"
           />
           <Link

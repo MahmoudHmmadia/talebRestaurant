@@ -17,8 +17,11 @@ import MainDish from "./components/MainDish";
 import Order from "../../components/order";
 import ServerResponse from "../../components/serverResponse";
 import { UseContext } from "../../context/UseContext";
-import AltNav from "../../components/AltNav";
+import AltNav from "../../components/altnav/AltNav";
 import { Helmet } from "react-helmet";
+import cover from "../../assets/menu2.jpg";
+import { useEffect } from "react";
+import CoolImage from "../../components/coolImage/CoolImage";
 SwiperCore.use([Pagination]);
 function Menu() {
   const MENU_CATEGORIES: menuCategories[] = [
@@ -67,6 +70,20 @@ function Menu() {
         <link rel="icon" href={logo} />
         <title>Taleb Restaurant | Menu</title>
       </Helmet>
+      <div
+        className="blur-load"
+        style={{
+          backgroundImage: 'url("src/assets/menu2-small.jpg")',
+          position: "absolute",
+        }}
+      >
+        <img
+          src={cover}
+          alt="COVER"
+          className="fixed w-100 h-100 l-0 t-0 fit-cover"
+          loading="lazy"
+        />
+      </div>
       {loader ? (
         <>
           <div
@@ -337,13 +354,15 @@ function Menu() {
                                 height: "80px",
                               }}
                             >
-                              <img
-                                src={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName}`}
-                                alt="DISH"
-                                className="fit-contain"
-                                style={{
-                                  height: cat === "drinks" ? "80px" : "",
-                                }}
+                              <CoolImage
+                                thumb={`https://taleb-restaurant-api.onrender.com/assets/${
+                                  dish.imageName.trim().split(".")[0] +
+                                  "-small." +
+                                  dish.imageName.trim().split(".")[1]
+                                }`}
+                                height={cat === "drinks" ? 80 : ""}
+                                width={80}
+                                url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
                               />
                             </div>
                             <div className="flex justify-end price">

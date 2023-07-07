@@ -11,7 +11,7 @@ import { dish } from "../../hooks/useMenu";
 import { UseContext } from "../../context/UseContext";
 import Order from "../../components/order";
 import { CiWarning } from "react-icons/ci";
-import AltNav from "../../components/AltNav";
+import AltNav from "../../components/altnav/AltNav";
 import { TbToolsKitchen } from "react-icons/tb";
 import { BsTruck } from "react-icons/bs";
 import ServerResponse from "../../components/serverResponse";
@@ -20,6 +20,7 @@ import { BiHome } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { AxiosResponse } from "axios";
 import { Helmet } from "react-helmet";
+import CoolImage from "../../components/coolImage/CoolImage";
 SwiperCore.use([Pagination]);
 function Popular() {
   const {
@@ -211,19 +212,15 @@ function Popular() {
                       }}
                       key={index}
                     >
-                      <m.img
-                        src={`https://taleb-restaurant-api.onrender.com/assets/${dish?.imageName}`}
-                        alt="MAIN_DISH"
+                      <CoolImage
+                        thumb={`https://taleb-restaurant-api.onrender.com/assets/${
+                          dish.imageName.trim().split(".")[0] +
+                          "-small." +
+                          dish.imageName.trim().split(".")[1]
+                        }`}
+                        height={""}
                         width={400}
-                        initial={{
-                          opacity: 0,
-                        }}
-                        animate={{
-                          opacity: 1,
-                          transition: {
-                            duration: 1,
-                          },
-                        }}
+                        url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
                       />
                     </m.div>
                   ))}
@@ -298,13 +295,16 @@ function Popular() {
                       setRotate(dish.rotate);
                     }}
                   >
-                    <div className="image">
-                      <img
-                        src={`https://taleb-restaurant-api.onrender.com/assets/${dish?.imageName}`}
-                        alt="DISH"
-                        width={150}
-                      />
-                    </div>
+                    <CoolImage
+                      thumb={`https://taleb-restaurant-api.onrender.com/assets/${
+                        dish.imageName.trim().split(".")[0] +
+                        "-small." +
+                        dish.imageName.trim().split(".")[1]
+                      }`}
+                      height={""}
+                      width={150}
+                      url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
+                    />
                     <h3
                       className="cl-khaled txt-c uppercase fs-small letter-s-1"
                       style={{

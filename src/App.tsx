@@ -5,7 +5,6 @@ import "./sass/app.scss";
 import Welcome from "./pages/welcome/Welcome";
 import Popular from "./pages/popular";
 import Team from "./pages/team";
-
 function App() {
   return (
     <div className="app overflow-hidden">

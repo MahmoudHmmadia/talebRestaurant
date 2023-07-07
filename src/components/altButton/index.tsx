@@ -1,5 +1,6 @@
 import { motion as m } from "framer-motion";
 import { IconType } from "react-icons";
+import "./alt-button.scss";
 type props = {
   content: string;
   color: string;
@@ -22,7 +23,7 @@ function AltButton({
 }: props) {
   return (
     <m.button
-      className={`p-2 bold uppercase letter-s-1 m-auto centering-content g-1 ${bgColor} ${color} ${
+      className={`p-2 bold uppercase letter-s-1 m-auto centering-content g-1 alt-button ${bgColor} ${color} ${
         width ? width : "w-60"
       } ${valid ? "pointer opacity-100" : "mouse-none opacity-50"}`}
       onClick={fn}

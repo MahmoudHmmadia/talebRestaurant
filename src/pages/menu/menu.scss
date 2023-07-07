@@ -1,6 +1,5 @@
 @use "../../sass/mixins/grid" as *;
 .menu {
-  background-image: url("../../assets/menu2.jpg");
   background-size: cover;
   .menu_dishes {
     @include grid(150px);

@@ -21,7 +21,7 @@ function Home() {
     >
       {reservation && (
         <>
-          <div className="overlay w-100 h-100 absolute black-bg z-10000 opacity-80"></div>
+          <div className="overlay w-100 h-100 fixed black-bg z-10000 opacity-80"></div>
           <Reservation />
         </>
       )}
