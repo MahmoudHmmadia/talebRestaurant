@@ -16,20 +16,10 @@ import AltNav from "../../components/altnav/AltNav";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import cover from "../../assets/makeYourFood3.jpg";
+import CoolImage from "../../components/coolImage/CoolImage";
 function MakeYourFood() {
   const { isBurger, isPizza, setIsBurger, setIsPizza } = useMakeFood();
   const { serverResponse, setLoader, loader } = UseContext();
-  useEffect(() => {
-    const blurContainers = document.querySelectorAll(".blur-load");
-    blurContainers.forEach((div) => {
-      const img = div.querySelector("img");
-      function loaded() {
-        div.classList.add("loaded");
-      }
-      if (img?.complete) loaded();
-      else img?.addEventListener("load", loaded);
-    });
-  });
   return (
     <div
       className="makeYourFood flex flex-column g-3 relative pb-3"
@@ -37,20 +27,12 @@ function MakeYourFood() {
         minHeight: "100vh",
       }}
     >
-      <div
-        className="blur-load"
-        style={{
-          backgroundImage: 'url("src/assets/makeYourFood3-small.jpg")',
-          position: "absolute",
-        }}
-      >
-        <img
-          src={cover}
-          alt="COVER"
-          className="fixed w-100 h-100 l-0 t-0 fit-cover"
-          loading="lazy"
-        />
-      </div>
+      <img
+        src={cover}
+        alt="COVER"
+        className="fixed w-100 h-100 l-0 t-0 fit-cover"
+        loading="lazy"
+      />
       <Helmet>
         <title>Taleb Restaurant | Make Your Food</title>
       </Helmet>
@@ -96,25 +78,11 @@ function MakeYourFood() {
             }}
           >
             <div className="pizza_logo smooth-5 centering-content">
-              <div
-                className="blur-load"
-                style={{
-                  backgroundImage: `url("src/assets/pizza-small.png")`,
-                }}
-              >
-                <img src={pizza} alt="PIZZA" width={350} loading="lazy" />
-              </div>
+              <CoolImage height={""} url={pizza} thumb="" width={350} />
             </div>
             <div className="radius-s g-1 absolute l-50 t-50 translate-50 p-2 d-none align-center scale-0 smooth-5 make_pizza opacity-0 w-100 h-100">
               <div className="image scale-0">
-                <div
-                  className="blur-load"
-                  style={{
-                    backgroundImage: 'url("src/assets/pizzaLogo-small.png")',
-                  }}
-                >
-                  <img src={pizzaLogo} alt="PIZZA" loading="lazy" />
-                </div>
+                <CoolImage height={""} url={pizzaLogo} thumb="" width={""} />
               </div>
               <div className="flex flex-column g-2 align-start content ">
                 <div className="flex g-1 align-center title">
@@ -147,14 +115,7 @@ function MakeYourFood() {
             }}
           >
             <div className="burger_logo smooth-5 centering-content">
-              <div
-                className="blur-load"
-                style={{
-                  backgroundImage: 'url("src/assets/burger-small.png")',
-                }}
-              >
-                <img src={burger} alt="BURGER" width={350} loading="lazy" />
-              </div>
+              <CoolImage height={""} url={burger} thumb="" width={350} />
             </div>
             <div className="radius-s g-1 absolute l-50 t-50 translate-50 d-none align-center scale-0 smooth-5 make_burger opacity-0 w-100 h-100 p-2">
               <div className="flex flex-column g-2 align-start content">
@@ -180,14 +141,7 @@ function MakeYourFood() {
                 </m.button>
               </div>
               <div className="image scale-0">
-                <div
-                  className="blur-load"
-                  style={{
-                    backgroundImage: 'url("src/assets/burgerLogo-small.png")',
-                  }}
-                >
-                  <img src={burgerLogo} alt="Burger" loading="lazy" />
-                </div>
+                <CoolImage height={""} url={burgerLogo} thumb="" width={""} />
               </div>
             </div>
           </div>

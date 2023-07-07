@@ -14,7 +14,9 @@ function Loading() {
           <div className="image centering-content">
             <img src={logo} alt="LOGO" width={100} />
           </div>
-          <h2 className="neon uppercase letter-s-1">Cocking In Progress</h2>
+          <h2 className="neon uppercase letter-s-1 txt-c">
+            Cocking In Progress
+          </h2>
         </div>
         <div
           className="line-bg line absolute l-50 translate-50 h-60"
