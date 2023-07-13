@@ -211,7 +211,10 @@ function Menu() {
           <div className="container flex flex-column g-1 relative">
             {isToggle && (
               <m.ul
-                className="absolute r-0 t-0 flex flex-column radius-s alt-bg w-20 z-100000"
+                className="absolute r-0 t-0 flex flex-column radius-s alt-bg z-100000"
+                style={{
+                  minWidth: "50%",
+                }}
                 initial={{
                   opacity: 0,
                   x: 150,
@@ -362,6 +365,7 @@ function Menu() {
                                 }`}
                                 height={cat === "drinks" ? 80 : ""}
                                 width={80}
+                                type={cat}
                                 url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
                               />
                             </div>

@@ -39,6 +39,7 @@ function MainDish({
             }`}
             height={mainDish.cat === "drinks" ? 400 : "auto"}
             width={"100%"}
+            type={mainDish.cat}
             url={`https://taleb-restaurant-api.onrender.com/assets/${mainDish.imageName.trim()}`}
           />
         )}
