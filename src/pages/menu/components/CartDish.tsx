@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { dish, menuCategories } from "../../../hooks/useMenu";
 import { BiMinus, BiPlus, BiTrash } from "react-icons/bi";
+import CoolImage from "../../../components/coolImage/CoolImage";
 
 type props = {
   dish: dish;
@@ -66,25 +67,14 @@ function CartDish({ dish, cart, setCart, setTotal, total }: props) {
         <BiMinus />
       </div>
       <div className="details flex flex-column g-1 align-center">
-        <div className="image">
-          <div
-            className="blur-load"
-            style={{
-              backgroundImage: `url(https://taleb-restaurant-api.onrender.com/assets/${
-                dish.imageName.split(".")[0] +
-                "-small" +
-                "." +
-                dish.imageName.split(".")[1]
-              })`,
-            }}
-          >
-            <img
-              src={`https://taleb-restaurant-api/${dish.imageName}`}
-              alt="IMAGE"
-              width={100}
-            />
-          </div>
-        </div>
+        <CoolImage
+          height={""}
+          thumb=""
+          url={`https://taleb-restaurant-api.onrender.com/asets/${dish.imageName.trim()}`}
+          // url={`http://localhost:3500/assets/${dish.imageName.trim()}`}
+          width={100}
+          type=""
+        />
         <span
           className="cl-b khaled-bg bold centering-content"
           style={{

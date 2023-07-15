@@ -263,11 +263,11 @@ html {
   outline: none;
 }
 
-.cloudy-bg {
-  background: $gradient-cloudy;
-}
 .inherit-bg {
   background-color: inherit;
+}
+.cloudy-bg {
+  background: $gradient-cloudy;
 }
 .green_gradient_bg {
   background: $gradient-green;
@@ -774,7 +774,7 @@ html {
   color: #000;
 }
 
-.cl-m {
+.cl-gold {
   color: $gold;
 }
 

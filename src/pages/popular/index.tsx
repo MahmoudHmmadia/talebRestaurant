@@ -220,7 +220,8 @@ function Popular() {
                         }`}
                         height={""}
                         width={400}
-                        url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
+                        // url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
+                        url={`http://localhost:3500/assets/${dish.imageName.trim()}`}
                       />
                     </m.div>
                   ))}
@@ -303,7 +304,8 @@ function Popular() {
                       }`}
                       height={""}
                       width={150}
-                      url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
+                      // url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
+                      url={`http://localhost:3500/assets/${dish.imageName.trim()}`}
                     />
                     <h3
                       className="cl-khaled txt-c uppercase fs-small letter-s-1"

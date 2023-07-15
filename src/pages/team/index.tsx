@@ -162,6 +162,7 @@ function Team() {
                         }`}
                         height={""}
                         width={150}
+                        type="team"
                         url={`https://taleb-restaurant-api.onrender.com/assets/${person?.image.trim()}`}
                       />
                     )}
@@ -173,18 +174,9 @@ function Team() {
                 className="flex-column centering-content g-1 absolute l-50 t-50 translate-50 person_details"
                 initial={{
                   opacity: 0,
-                  y: 30,
-                  x: "-50%",
                 }}
                 animate={{
                   opacity: 1,
-                  y: "-50%",
-                  x: "-50%",
-                }}
-                transition={{
-                  duration: 0.05,
-                  type: "spring",
-                  stiffness: 300,
                 }}
               >
                 <div className="image overflow-hidden radius-m">
@@ -197,6 +189,7 @@ function Team() {
                       }`}
                       height={120}
                       width={120}
+                      type="team"
                       url={`https://taleb-restaurant-api.onrender.com/assets/${personDetails?.image.trim()}`}
                     />
                   )}

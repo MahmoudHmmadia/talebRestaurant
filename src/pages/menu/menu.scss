@@ -84,4 +84,14 @@
       }
     }
   }
+  @media (max-width: 500px) {
+    .main-dish {
+      width: 250px !important;
+    }
+    .mobile_shape {
+      width: 250px;
+      height: 250px;
+      top: 26%;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import { BiCart, BiMenu } from "react-icons/bi";
+import { BiCart, BiDish, BiMenu } from "react-icons/bi";
 import { IoCloseCircle } from "react-icons/io5";
 import { FaComments } from "react-icons/fa";
 import { CgClose } from "react-icons/cg";
@@ -20,8 +20,8 @@ import { UseContext } from "../../context/UseContext";
 import AltNav from "../../components/altnav/AltNav";
 import { Helmet } from "react-helmet";
 import cover from "../../assets/menu2.jpg";
-import { useEffect } from "react";
 import CoolImage from "../../components/coolImage/CoolImage";
+import { ImSpoonKnife } from "react-icons/im";
 SwiperCore.use([Pagination]);
 function Menu() {
   const MENU_CATEGORIES: menuCategories[] = [
@@ -200,7 +200,7 @@ function Menu() {
               )}
             </div>
             <div
-              className="fs-large flex cl-w pointer"
+              className="fs-large flex cl-w pointer z-100000"
               onClick={() => {
                 setIsToggle((prev) => !prev);
               }}
@@ -210,44 +210,73 @@ function Menu() {
           </AltNav>
           <div className="container flex flex-column g-1 relative">
             {isToggle && (
-              <m.ul
-                className="absolute r-0 t-0 flex flex-column radius-s alt-bg z-100000"
-                style={{
-                  minWidth: "50%",
-                }}
-                initial={{
-                  opacity: 0,
-                  x: 150,
-                }}
-                animate={{
-                  opacity: 1,
-                  x: 0,
-                  transition: {
-                    duration: 0.5,
-                    type: "spring",
-                    stiffness: 50,
-                  },
-                }}
-              >
-                {MENU_CATEGORIES.map((category) => (
-                  <m.li
-                    key={category}
-                    className={`p-2 centering-content g-1 pointer cat ${
-                      cat === category && "cl-b khaled-bg"
-                    }`}
-                    onClick={() => {
-                      setCat(category);
-                      setIsToggle(false);
-                    }}
-                    whileHover={{
-                      color: "#000",
-                      backgroundColor: "#e4c590",
-                    }}
+              <>
+                <div className="fixed w-100 h-100 l-0 t-0 opacity-90 alt-bg z-100000"></div>
+                <m.ul
+                  className="fixed w-100 h-100 r-0 t-0 flex flex-column align-center justify-center radius-s z-100000"
+                  initial={{
+                    opacity: 0,
+                    y: -300,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.2,
+                      type: "spring",
+                      stiffness: 90,
+                    },
+                  }}
+                >
+                  <li
+                    className="absolute r-0 t-0 cl-r pointer fs-med"
+                    onClick={() => setIsToggle(false)}
                   >
-                    <span className={`uppercase letter-s-1`}>{category}</span>
-                  </m.li>
-                ))}
-              </m.ul>
+                    <IoCloseCircle />
+                  </li>
+                  <li className="centering-content g-1 ">
+                    <span className="flex cl-khaled fs-large">
+                      <BiDish />
+                    </span>
+                    <span
+                      className="h-100"
+                      style={{
+                        width: "2px",
+                        background: "#aaa",
+                      }}
+                    >
+                      <span className="d-none">a</span>
+                    </span>
+                    <span className="cl-khaled fs-large flex">
+                      <ImSpoonKnife />
+                    </span>
+                  </li>
+                  <li
+                    className="w-70"
+                    style={{
+                      height: "2px",
+                      background: "#aaa",
+                    }}
+                  ></li>
+                  {MENU_CATEGORIES.map((category) => (
+                    <m.li
+                      key={category}
+                      className={`p-2 centering-content g-1 pointer cat  ${
+                        cat === category && "cl-khaled"
+                      }`}
+                      onClick={() => {
+                        setCat(category);
+                        setIsToggle(false);
+                      }}
+                      whileHover={{
+                        color: "#e4c590",
+                      }}
+                    >
+                      <span className={`uppercase letter-s-1`}>{category}</span>
+                    </m.li>
+                  ))}
+                </m.ul>
+              </>
             )}
             <MainDish
               mainDish={mainDish}
@@ -367,6 +396,7 @@ function Menu() {
                                 width={80}
                                 type={cat}
                                 url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
+                                // url={`http://localhost:3500/assets/${dish.imageName.trim()}`}
                               />
                             </div>
                             <div className="flex justify-end price">

@@ -60,9 +60,12 @@ const ImageRenderer = ({
             </div>
           </div>
           <img
-            className={classnames(`cool_image fit-contain`, {
-              ["isLoaded"]: !!isLoaded,
-            })}
+            className={classnames(
+              `cool_image ${type == "team" ? "fit-cover" : "fit-contain"}`,
+              {
+                ["isLoaded"]: !!isLoaded,
+              }
+            )}
             src={url}
             onLoad={handleOnLoad}
             style={{

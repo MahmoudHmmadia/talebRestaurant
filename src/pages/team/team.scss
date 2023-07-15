@@ -47,17 +47,24 @@
           transform: rotate(calc(360deg / 6 * var(--i)));
           transform-origin: 340px;
           @media (max-width: 767px) {
-            width: 40px;
-            height: 40px;
+            width: 40px !important;
+            height: 40px !important;
             transform-origin: 170px;
           }
 
           img {
             transform: rotate(calc(-360deg / 6 * var(--i)));
             filter: grayscale(100%);
+            @media (max-width: 767px) {
+              width: 40px !important;
+              height: 40px !important;
+            }
           }
           &.active {
             box-shadow: 0 0 0 6px #161718, 0 0 0 12px $khaled-main;
+            @media (max-width: 767px) {
+              box-shadow: 0 0 0 3px #161718, 0 0 0 6px $khaled-main;
+            }
             img {
               filter: grayscale(0);
             }
@@ -68,8 +75,8 @@
         @media (max-width: 767px) {
           .image {
             img {
-              width: 50px;
-              height: 50px;
+              width: 60px !important;
+              height: 60px !important;
             }
           }
           .details {

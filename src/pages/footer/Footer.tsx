@@ -61,7 +61,7 @@ function Footer() {
           <p className="cl-t2">Open : 12:00 am - 00:00 pm</p>
           <div className="m-t2 flex flex-column g-1 align-center">
             <h4
-              className="cool_title"
+              className="cool_title txt-c"
               style={{
                 fontSize: "2.5rem",
               }}

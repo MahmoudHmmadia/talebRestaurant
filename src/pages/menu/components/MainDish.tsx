@@ -24,7 +24,7 @@ function MainDish({
   return (
     <div className="z_1 flex align-center justify-between g-1 main_dish">
       <div
-        className="image relative centering-content centering-content "
+        className="main-dish relative centering-content centering-content "
         style={{
           width: "400px",
           height: "450px",
@@ -41,6 +41,7 @@ function MainDish({
             width={"100%"}
             type={mainDish.cat}
             url={`https://taleb-restaurant-api.onrender.com/assets/${mainDish.imageName.trim()}`}
+            // url={`http://localhost:3500/assets/${mainDish.imageName.trim()}`}
           />
         )}
         <div
