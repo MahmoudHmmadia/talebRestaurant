@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import Loading from "../loading";
 import image from "../../assets/rate.svg";
 import { Helmet } from "react-helmet";
+import Popular from "../popular";
 function Welcome() {
   const { toggle, setToggle, serverResponse } = UseContext();
   const [isLoading, setIsLoading] = useState(true);
@@ -101,6 +102,7 @@ function Welcome() {
         <Services />
         <MakeYourOwnFood />
         <About />
+        <Popular />
         <OurStrength />
         <RateUs />
         <Footer />

@@ -41,7 +41,7 @@ function Cart({ setIsCart, cart, setCart, total, setTotal }: props) {
   }, [total]);
   return (
     <m.div
-      className="cart fixed r-0 h-100 dark-box-shadow main-bg flex flex-column g-2 z-100000 t-0 w-50"
+      className="cart fixed r-0 h-100 dark-box-shadow main-bg flex flex-column g-2 z-100000 t-0 w-40"
       style={{
         height: "100vh",
         overflow: "auto",
@@ -90,7 +90,7 @@ function Cart({ setIsCart, cart, setCart, total, setTotal }: props) {
           </p>
         </div>
       ) : (
-        <div className="flex flex-column g-1">
+        <div className="flex flex-column g-3">
           {cart.map((d) => {
             return (
               <CartDish

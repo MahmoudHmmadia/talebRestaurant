@@ -44,11 +44,19 @@ function CartDish({ dish, cart, setCart, setTotal, total }: props) {
   }, [number]);
   return (
     <div
-      className="flex g-1 p-1 alt-bg align-center justify-evenly dark-box-shadow relative"
+      className="flex g-1 p-3 dark-box-shadow align-center justify-evenly relative"
       key={dish.name}
+      style={{
+        borderTop: "1px solid #333",
+        borderBottom: "1px solid #333",
+      }}
     >
       <div
         className="absolute cl-r fs-med flex r-0 t-0 pointer"
+        style={{
+          top: "5px",
+          right: "10px",
+        }}
         onClick={() => {
           setCart(cart.filter((d) => d.name !== dish.name));
           setTotal((prev) => prev.filter((d) => d.name !== dish.name));
@@ -66,13 +74,13 @@ function CartDish({ dish, cart, setCart, setTotal, total }: props) {
       >
         <BiMinus />
       </div>
-      <div className="details flex flex-column g-1 align-center">
+      <div className="details flex flex-column g-1 align-center flex-1">
         <CoolImage
           height={""}
           thumb=""
-          url={`https://taleb-restaurant-api.onrender.com/asets/${dish.imageName.trim()}`}
+          url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
           // url={`http://localhost:3500/assets/${dish.imageName.trim()}`}
-          width={100}
+          width={80}
           type=""
         />
         <span

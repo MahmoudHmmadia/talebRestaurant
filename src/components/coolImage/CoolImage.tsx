@@ -27,36 +27,38 @@ const ImageRenderer = ({
     setIsLoaded(true);
   };
   return (
-    <div className="image-container centering-content w-100 h-100" ref={imgRef}>
+    <div
+      className="image-container centering-content w-100 h-100"
+      ref={imgRef}
+      style={{
+        minHeight: "50px",
+        minWidth: "50px",
+      }}
+    >
       {isInView && (
         <>
-          {/*  ==> small version of image <== */}
+          {/* ==> small version of image <== */}
           {/* <img
-            className={classnames("cool_image", "thumb", {
+            className={classnames("cool_image", "thumb", "circle", {
               ["isLoaded"]: !!isLoaded,
             })}
             src={thumb}
+            loading="lazy"
+            style={{
+              filter: "blur(8px)",
+            }}
           /> */}
           {/* ==> custom loader <== */}
           <div
-            className={classnames("cool_image", "thumb", "semicircle", {
+            className={classnames("cool_image centering-content", "thumb", "", {
               ["isLoaded"]: !!isLoaded,
             })}
           >
-            <div>
-              <div>
-                <div>
-                  <div>
-                    <div>
-                      <div>
-                        <div>
-                          <div></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="loaderr">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </div>
           <img
@@ -67,6 +69,7 @@ const ImageRenderer = ({
               }
             )}
             src={url}
+            loading="lazy"
             onLoad={handleOnLoad}
             style={{
               height,

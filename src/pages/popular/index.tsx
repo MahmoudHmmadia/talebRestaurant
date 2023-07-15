@@ -19,7 +19,6 @@ import AltButton from "../../components/altButton";
 import { BiHome } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { AxiosResponse } from "axios";
-import { Helmet } from "react-helmet";
 import CoolImage from "../../components/coolImage/CoolImage";
 SwiperCore.use([Pagination]);
 function Popular() {
@@ -79,7 +78,6 @@ function Popular() {
     return dishes;
   }
   function getPopular() {
-    setLoader(true);
     myAxios
       .get("/menu/popular")
       .then((res: AxiosResponse) => {
@@ -99,19 +97,10 @@ function Popular() {
     getPopular();
   }, []);
   return (
-    <div className="popular alt-bg relative overflow-hidden pb-3" id="popular">
-      <Helmet>
-        <title>Taleb Restaurant | Popular</title>
-      </Helmet>
-      {loader && (
-        <>
-          <div
-            className="fixed l-0 t-0 w-100 h-100 black-bg opacity-100 z-100000"
-            style={{ zIndex: 999999999991 }}
-          ></div>
-          <div className="loader" style={{ zIndex: 999999999999 }}></div>
-        </>
-      )}
+    <div
+      className="popular alt-bg relative section overflow-hidden pb-3"
+      id="popular"
+    >
       <div className="absolute l-0 t-0 w-100 h-100 alt-bg opacity-80"></div>
       {!popular ? (
         <div className="flex flex-column align-center g-3 absolute l-50 t-50 translate-50 container">
@@ -163,27 +152,18 @@ function Popular() {
           <div
             className="container grid g-3"
             style={{
-              gridTemplateRows: "40px 350px 1fr",
+              gridTemplateRows: "350px 1fr",
             }}
           >
-            <AltNav>
-              <div className="flex cl-khaled fs-large popular-icon">
-                <TbToolsKitchen />
-              </div>
-              <div className="flex uppercase align-center cl-w neon flex-column g-1">
-                <h1 className="">popular</h1>
-                <h1 className="">dishes</h1>
-              </div>
-            </AltNav>
             {serverResponse && (
               <>
                 <div className="fixed l-0 t-0 w-100 h-100 black-bg opacity-70 z-100000"></div>
-                <ServerResponse response={serverResponse} />
+                <h1>The Server Is Not Working Write Now</h1>
               </>
             )}
             {mainDish && (
               <div
-                className="=g-3 grid popular_main_dish_container"
+                className="g-3 grid popular_main_dish_container"
                 style={{
                   gridTemplateColumns: "50% 1fr",
                 }}
@@ -195,7 +175,7 @@ function Popular() {
                     width: "1150px",
                     aspectRatio: "1/1",
                     border: "100px solid #e4c590a8",
-                    top: "-91%",
+                    top: "-85%",
                     left: "-7%",
                     transform: `rotate(${rotate}deg)`,
                   }}
@@ -212,7 +192,7 @@ function Popular() {
                       }}
                       key={index}
                     >
-                      <CoolImage
+                      {/* <CoolImage
                         thumb={`https://taleb-restaurant-api.onrender.com/assets/${
                           dish.imageName.trim().split(".")[0] +
                           "-small." +
@@ -220,13 +200,18 @@ function Popular() {
                         }`}
                         height={""}
                         width={400}
-                        // url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
-                        url={`http://localhost:3500/assets/${dish.imageName.trim()}`}
+                        url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
+                        // url={`http://localhost:3500/assets/${dish.imageName.trim()}`}
+                      /> */}
+                      <img
+                        src={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
+                        alt=""
+                        width={400}
                       />
                     </m.div>
                   ))}
                 </div>
-                <div className="flex flex-column z-100000 g-1 main_dish">
+                <div className="flex flex-column z-10000 g-1 main_dish">
                   <p className="cl-t uppercase letter-s-1 fs-med">
                     #{mainDish?.dishNumber}
                   </p>
@@ -304,8 +289,8 @@ function Popular() {
                       }`}
                       height={""}
                       width={150}
-                      // url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
-                      url={`http://localhost:3500/assets/${dish.imageName.trim()}`}
+                      url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
+                      // url={`http://localhost:3500/assets/${dish.imageName.trim()}`}
                     />
                     <h3
                       className="cl-khaled txt-c uppercase fs-small letter-s-1"

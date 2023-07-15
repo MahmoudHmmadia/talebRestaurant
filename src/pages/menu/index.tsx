@@ -22,6 +22,7 @@ import { Helmet } from "react-helmet";
 import cover from "../../assets/menu2.jpg";
 import CoolImage from "../../components/coolImage/CoolImage";
 import { ImSpoonKnife } from "react-icons/im";
+import Loader from "../../components/Loader";
 SwiperCore.use([Pagination]);
 function Menu() {
   const MENU_CATEGORIES: menuCategories[] = [
@@ -86,15 +87,7 @@ function Menu() {
       </div>
       {loader ? (
         <>
-          <div
-            className="fixed l-0 t-0 w-100 h-100 alt-bg opacity-100 z-100000 pt-3"
-            style={{ zIndex: 999999999991 }}
-          >
-            <div className="image m-auto w-fit">
-              <img src={logo} alt="LOGO" width={150} />
-            </div>
-          </div>
-          <div className="loader" style={{ zIndex: 999999999999 }}></div>
+          <Loader />
         </>
       ) : (
         <>

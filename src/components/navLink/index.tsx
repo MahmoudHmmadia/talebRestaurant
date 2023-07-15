@@ -21,7 +21,7 @@ function Link({ content, href, hoverColor, color }: props) {
         color: hoverColor,
       }}
     >
-      {href === "popular" || href == "team" ? (
+      {href == "team" ? (
         <NavLink className={`${color} letter-s-2 pointer nav-link`} to={href}>
           {content}
         </NavLink>
