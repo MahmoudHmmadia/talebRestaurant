@@ -90,9 +90,14 @@ function Content({ cover, title, active, nextSlide, prevSlide }: props) {
                 <AiOutlineArrowRight />
               </div>
             </m.div>
-            <div className="flex-1 flex flex-column g-3 align-center">
+            <div
+              className="flex-1 grid home_content_view"
+              style={{
+                gridTemplateRows: "40px 350px 1fr",
+              }}
+            >
               <SectionTitle title="traditional & HYGINE" animate={true} />
-              <div className="flex flex-column align-center g-1 w-100 align-center">
+              <div className="flex flex-column align-center g-1 w-100 align-center flex-1 justify-center">
                 <m.h1
                   className="txt-c cool_title"
                   style={{
@@ -132,17 +137,19 @@ function Content({ cover, title, active, nextSlide, prevSlide }: props) {
                   Come with family & feel the joy of mouthwatering food
                 </m.p>
               </div>
-              <Button
-                outline="outline"
-                color="cl-khaled"
-                content="view our menu"
-                altColor="cl-b"
-                button_circle_bg_color="khaled-bg"
-                animate={true}
-                clickFunction={() => navigate("/menu")}
-                valid={true}
-                Icon={GiFoodTruck}
-              />
+              <div className="w-fit m-auto">
+                <Button
+                  outline="outline"
+                  color="cl-khaled"
+                  content="view our menu"
+                  altColor="cl-b"
+                  button_circle_bg_color="khaled-bg"
+                  animate={true}
+                  clickFunction={() => navigate("/menu")}
+                  valid={true}
+                  Icon={GiFoodTruck}
+                />
+              </div>
             </div>
           </div>
         </div>

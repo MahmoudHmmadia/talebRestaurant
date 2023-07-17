@@ -85,7 +85,7 @@ function Cart({ setIsCart, cart, setCart, total, setTotal }: props) {
           <div className="flex fs-x-large cl-t">
             <IoRestaurantSharp />
           </div>
-          <p className="cl-t centering-content uppercase bold fs-small letter-s-1">
+          <p className="cl-t centering-content uppercase bold fs-small letter-s-1 txt-c">
             There Is No Dishes Added To The Cart Yet
           </p>
         </div>

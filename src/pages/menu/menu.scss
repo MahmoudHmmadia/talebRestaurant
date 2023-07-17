@@ -5,6 +5,11 @@
     @include grid(150px);
     gap: 3rem;
   }
+  .cart {
+    @media (max-width: 767px) {
+      width: 80% !important;
+    }
+  }
   @media (min-width: 767px) {
     .logo {
       padding-left: 170px;

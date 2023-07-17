@@ -113,15 +113,6 @@ function Popular() {
             <CiWarning />
           </div>
           <h1 className=" neon txt-c ">THE SERVER IS NOT WORKING WRITE NOW</h1>
-          <AltButton
-            bgColor="blue_gradient_bg"
-            color="cl-b"
-            content="go back"
-            Icon={BiHome}
-            valid={true}
-            fn={() => navigate("/")}
-            width="w-50"
-          />
         </div>
       ) : (
         <>
