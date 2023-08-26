@@ -93,7 +93,7 @@ function Content({ cover, title, active, nextSlide, prevSlide }: props) {
             <div
               className="flex-1 grid home_content_view"
               style={{
-                gridTemplateRows: "40px 350px 1fr",
+                gridTemplateRows: "40px 380px 1fr",
               }}
             >
               <SectionTitle title="traditional & HYGINE" animate={true} />

@@ -28,7 +28,7 @@ function About() {
             experiences that will create unforgettable memories.
           </div>
           <h3>Book Through Call</h3>
-          <h2 className="cl-khaled">+80 (400) 123 4567</h2>
+          <h2 className="cl-khaled">+963 967 967 967</h2>
           <div className="flex g-1 fs-small w-100">
             <AltButton
               bgColor="khaled-bg"

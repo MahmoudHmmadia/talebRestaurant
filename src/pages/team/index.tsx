@@ -164,6 +164,7 @@ function Team() {
                         width={150}
                         type="team"
                         url={`https://taleb-restaurant-api.onrender.com/assets/${person?.image.trim()}`}
+                        // url={`http://localhost:3500/assets/${person?.image.trim()}`}
                       />
                     )}
                   </div>
@@ -182,15 +183,12 @@ function Team() {
                 <div className="image overflow-hidden radius-m">
                   {personDetails.image && (
                     <CoolImage
-                      thumb={`https://taleb-restaurant-api.onrender.com/assets/${
-                        personDetails?.image.trim().split(".")[0] +
-                        "-small." +
-                        personDetails?.image.trim().split(".")[1]
-                      }`}
+                      thumb={``}
                       height={120}
                       width={120}
                       type="team"
                       url={`https://taleb-restaurant-api.onrender.com/assets/${personDetails?.image.trim()}`}
+                      // url={`http://localhost:3500/assets/${personDetails?.image.trim()}`}
                     />
                   )}
                 </div>

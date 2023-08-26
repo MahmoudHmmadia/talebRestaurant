@@ -2,6 +2,7 @@ import { GiKitchenKnives } from "react-icons/gi";
 import "./button.scss";
 import { motion as m } from "framer-motion";
 import { IconType } from "react-icons";
+import { UseContext } from "../../context/UseContext";
 type props = {
   content: string;
   bgColor?: string;
@@ -27,6 +28,7 @@ function Button({
   Icon,
   valid,
 }: props) {
+  const { loader } = UseContext();
   return (
     <m.button
       className={`button pl-3 pr-3 pt-2 pb-2 relative bold  letter-s-2 uppercase centering-content relative overflow-hidden ${
@@ -46,6 +48,7 @@ function Button({
         delay: 2,
       }}
       onClick={clickFunction}
+      disabled={loader}
     >
       <div
         className={`absolute button_circle smooth-2 l-50 circle flex g-1 align-center ${button_circle_bg_color}`}

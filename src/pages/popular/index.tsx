@@ -192,10 +192,10 @@ function Popular() {
                         height={""}
                         width={400}
                         url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
-                        // url={`http://localhost:3500/assets/${dish.imageName.trim()}`}
                       /> */}
                       <img
                         src={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
+                        // src={`http://localhost:3500/assets/${dish.imageName.trim()}`}
                         alt=""
                         width={400}
                       />
@@ -273,11 +273,7 @@ function Popular() {
                     }}
                   >
                     <CoolImage
-                      thumb={`https://taleb-restaurant-api.onrender.com/assets/${
-                        dish.imageName.trim().split(".")[0] +
-                        "-small." +
-                        dish.imageName.trim().split(".")[1]
-                      }`}
+                      thumb={``}
                       height={""}
                       width={150}
                       url={`https://taleb-restaurant-api.onrender.com/assets/${dish.imageName.trim()}`}
